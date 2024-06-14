@@ -1,0 +1,181 @@
+
+
+import React from 'react'
+import Navbar from "./Navbar"
+import Bodycomponenet from "./Bodycomponenet.js"
+
+const { GeminiProClient } = require('@google/generative-ai');
+
+// Use the GeminiProClient
+const client = new GeminiProClient({
+  apiKey: 'AIzaSyAxo8cEojAukOQK70Pw6StGUfqGgtGKwj8'
+});
+
+// Call methods on the client as needed
+
+
+
+function App() {
+  return (
+    <div className="gemini">
+        <Navbar/>
+        <div className="Body">
+          <Bodycomponenet/>
+        </div>
+    </div>   
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+// import Navbar from "./Navbar";
+// import Bodycomponenet from "./Bodycomponenet";
+// import { GoogleGenerativeAI } from "@google/generative-ai";
+
+function App(){
+  const  [count , setcount] = useState(0);
+
+
+  async function generateAnswer(){
+    console.log("loading...");
+    const response = await axios({
+      URL:"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyAxo8cEojAukOQK70Pw6StGUfqGgtGKwj8",
+      method: "post",
+      data:{
+        contents:[
+          {"contents":[{"parts":[{"text":"Write a story about a magic backpack"}]}]}
+        ],
+      },
+    }) ;
+  }
+  console.log(response);
+
+  
+      return (
+        <>
+        <h1>chat api</h1>
+        <button onClick={generateAnswer}>generate answer</button>
+        </>
+        // <div className="gemini">
+        //     <Navbar/>
+        //     <div className="Body">
+        //       <Bodycomponenet/>
+        //     </div>
+        // </div>   
+      );
+    }
+   
+
+export default App;
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import Navbar from './Navbar';
+// import BodyComponent from './Bodycomponenet';
+// import { GenerativeModel } from '@google/generative-ai';
+
+// function App() {
+//   const [generatedContent, setGeneratedContent] = useState('');
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const client = new GenerativeModel({
+//       apiKey: 'AIzaSyAxo8cEojAukOQK70Pw6StGUfqGgtGKwj8'
+//     });
+//     console.log(client);
+
+//     async function fetchData() {
+//       setLoading(true);
+//       try {
+//         const response = await client.generateContent({
+//           contents: [{ parts: [{ text: 'Your question here' }] }]
+//         });
+
+//         if (response && response.candidates && response.candidates.length > 0) {
+//           setGeneratedContent(response.candidates[0].content.parts[0].text);
+//         } else {
+//           throw new Error('No candidates found in the response');
+//         }
+//       } catch (error) {
+//         console.error('Error fetching data:', error);
+//         // Handle error
+//       } finally {
+//         setLoading(false);
+//       }
+//     }
+
+//     fetchData();
+
+//     // Cleanup function if needed
+//     // return () => {};
+
+//   }, []); // Empty dependency array means this effect runs once after the initial render
+
+//   return (
+    
+//     <div className="gemini">
+//       <Navbar />
+//       <div className="Body">
+//         {loading ? (
+//           <p>Loading...</p>
+//         ) : (
+//           <BodyComponent generatedContent={generatedContent} />
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+import React from 'react';
+import axios from 'axios';
+
+function App() {
+  async function generateContent() {
+    console.log("Loading...");
+    try {
+      const response = await axios("https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyAxo8cEojAukOQK70Pw6StGUfqGgtGKwj8", {
+        contents: [
+          { contents: [{ parts: [{ text: "Write a story about a magic backpack" }] }] }
+        ],
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error generating answer:", error);
+    }
+  }
+
+  return (
+    <>
+      <h1>Chat API</h1>
+      <button onClick={generateContent}>Generate Answer</button>
+    </>
+  );
+}
+
+export default App;
+

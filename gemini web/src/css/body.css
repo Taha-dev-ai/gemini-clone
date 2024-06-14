@@ -1,0 +1,253 @@
+.container{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.text{
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cards{
+    margin-top: 50px;
+    /* background-color: rgb(219, 198, 238); */
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-body{
+    background-color: #f0f4f9;
+}
+.card :hover{
+    background-color:  #dad9d9
+}
+/* ...............................Notification...................................... */
+#Notification{
+    /* background-color: rgb(210, 255, 255); */
+    margin-top: 30px;
+    display: flex;
+        justify-content: center;
+        align-items: center;    
+}
+#Notification .MuiSvgIcon-root{
+    font-size: 30px;
+}
+.noti-icon{
+    background-color: #f0f4f9;
+    display: flex;
+
+}
+.outtext{
+    background-color: #f0f4f9;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+/* .noti-text{
+    background-color: rgb(156, 156, 234);
+} */
+.noti-text p{
+    font-size: 18px;
+    padding: 5px;
+}
+.button{
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    /* background-color:navajowhite; */
+    border-radius: 10px;
+    border: none;
+}
+.btn{
+    background-color: #f0f0f0;
+    color: black;
+    border: none;
+}
+#output{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.response{
+    background-color: #f0f4f9;
+    border-radius: 15px;
+
+  }
+/* ....................................................msg-sender..................................... */
+/* #fotter{
+    background-color: rgb(185, 185, 240);
+} */
+.outer-msg{
+    /* position: fixed; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(193, 246, 246); */
+}
+.msg-sender{
+    /* background-color: rgba(28, 30, 58, 1); */
+    background-color: #f0f4f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+/* .msg{
+    background-color: beige;
+} */
+.msg input{
+    
+    border: none;
+    /* width: 100%; */
+    /* width: 650px; */
+    padding: 5px;
+    font-size: x-large;
+}
+.msg input hover{
+    
+    border: none;
+}
+.icons{
+    /* background-color: rgb(244, 244, 137); */
+    display: flex;
+    gap: 15px;
+}
+
+.icons .MuiSvgIcon-root{
+    font-size: 30px;
+}
+.sender :hover{
+    background-color:  #d1d2d2;
+    border-radius: 50%;
+}
+#footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f0f0f0; /* Set the background color you desire */
+    padding: 20px; /* Adjust padding as needed */
+  }
+ 
+
+
+
+
+  /* -------------------------- */
+  .messageBox {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: #2d2d2d; */
+    padding: 0 15px;
+    border-radius: 10px;
+    /* border: 1px solid rgb(63, 63, 63); */
+  }
+  .msg-box{
+    display: flex;
+    align-items: center;
+  }
+  .messageBox:focus-within {
+    border: 1px solid rgb(110, 110, 110);
+  }
+  .fileUploadWrapper {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #file {
+    display: none;
+  }
+  .fileUploadWrapper label {
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .fileUploadWrapper label svg {
+    height: 18px;
+  }
+  .fileUploadWrapper label svg path {
+    transition: all 0.3s;
+  }
+  .fileUploadWrapper label svg circle {
+    transition: all 0.3s;
+  }
+  .fileUploadWrapper label:hover svg path {
+    stroke: #fff;
+  }
+  .fileUploadWrapper label:hover svg circle {
+    stroke: #fff;
+    fill: #3c3c3c;
+  }
+  .fileUploadWrapper label:hover .tooltip {
+    display: block;
+    opacity: 1;
+  }
+  .tooltip {
+    position: absolute;
+    top: -40px;
+    display: none;
+    opacity: 0;
+    color: white;
+    font-size: 10px;
+    text-wrap: nowrap;
+    background-color: #000;
+    padding: 6px 10px;
+    border: 1px solid #3c3c3c;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+    transition: all 0.3s;
+  }
+  #messageInput {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    /* color: white; */
+  }
+  #messageInput:focus ~ #sendButton svg path,
+  #messageInput:valid ~ #sendButton svg path {
+    fill: #3c3c3c;
+    stroke: white;
+  }
+  
+  #sendButton {
+    width: fit-content;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  #sendButton svg {
+    height: 18px;
+    transition: all 0.3s;
+  }
+  #sendButton svg path {
+    transition: all 0.3s;
+  }
+  #sendButton:hover svg path {
+    fill: #3c3c3c;
+    stroke: white;
+  }
+  
